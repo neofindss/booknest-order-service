@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-db
+  namespace: booknest
+  labels:
+    app: order-db
+    part-of: booknest
+spec:
+  selector:
+    app: order-db
+  ports:
+    - name: mongo
+      port: 27017
+      targetPort: mongo
